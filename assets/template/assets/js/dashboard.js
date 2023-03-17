@@ -49,7 +49,6 @@
             scale: ['#3d3c3c', '#f2f2f2'],
             normalizeFunction: 'polynomial',
             values: {
-
               "BZ": 75.00,
               "US": 56.25,
               "AU": 15.45,

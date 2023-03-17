@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background-color: #f8f7f4;
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn-normal{
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #f8f7f4;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -.02em;
+  text-align: center;
+  padding: 18px 24px;
+  transition: all .3s ease;
+  text-align: center;
+}
+
+input,select {
+  border: none;
+  outline: none;
+}
+
+.d-flex {
+  display: flex;
+}
+.a-center {
+  align-items: center;
+}
+.j-center {
+  justify-content: center;
+}
+.j-between {
+  justify-content: space-between;
+}
