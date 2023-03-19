@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  
   runtimeConfig: {
     // The private keys which are only available server-side
     // Keys within public are also exposed client-side
@@ -8,7 +9,6 @@ export default defineNuxtConfig({
       apiKey: process.env.X_API_KEY,
     }
   },
-
 
   sourcemap: {
     server: true,
