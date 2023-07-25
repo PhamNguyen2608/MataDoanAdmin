@@ -1,12 +1,12 @@
 <template>
 <div class="page-header">
-    <h3 class="page-title"> Quản lí người dùng </h3>
+    <h3 class="page-title"> Quản lí báo cáo </h3>
 </div>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Tất cả người dùng</h4>
+            <h4 class="card-title">Tất cả báo cáo</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

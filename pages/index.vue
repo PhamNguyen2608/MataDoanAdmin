@@ -83,7 +83,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <country-access/>
+    <!-- <div class="row">
       <div class="col-12 grid-margin">
         <div class="card">
           <div class="card-body">
@@ -152,7 +153,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-md-4 grid-margin stretch-card">
         <div class="card">
@@ -192,7 +193,11 @@
 </template> 
 
 <script>
+import CountryAccess from './CountryAccess/index.vue';
 export default {
+  components:{
+    'country-access': CountryAccess
+  },
   data() {
     return {
       data: null
