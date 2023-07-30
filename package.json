@@ -17,7 +17,10 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
+    "element-plus": "^2.3.8",
     "jquery": "^3.6.4",
-    "pinia": "^2.0.32"
+    "pinia": "^2.0.32",
+    "socket.io-client": "^4.7.1",
+    "vue": "^3.3.4"
   }
 }
