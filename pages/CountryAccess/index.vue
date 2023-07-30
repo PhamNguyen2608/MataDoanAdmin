@@ -32,21 +32,63 @@
 </template>
 
 <script>
+import io from 'socket.io-client';
+import $ from 'jquery';
+
 export default {
   data() {
     return {
       countries: [
-        {code: 'us', name: 'USA', visits: 1500, percentage: '60.35%'},
-        {code: 'de', name: 'Germany', visits: 800, percentage: '33.25%'},
-        {code: 'au', name: 'Australia', visits: 760, percentage: '15.45%'},
-        {code: 'gb', name: 'United Kingdom', visits: 450, percentage: '25.00%'},
-        {code: 'ro', name: 'Romania', visits: 620, percentage: '10.25%'},
-        {code: 'br', name: 'Brasil', visits: 230, percentage: '75.00%'},
-      ]
-    }
+        // { code: 'us', name: 'USA', visits: 1500, percentage: '60.35%' },
+      ],
+    };
   },
-}
+  methods: {
+    updateCountries(dataTemp) {
+      const promises = dataTemp.ips.map((ip) => {
+        const url = `https://geo.ipify.org/api/v2/country?apiKey=at_HZSu4YiWyrCy8BW7PzibJUtN5j5Ic&ipAddress=${ip}`;
+        return fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("concu",data)
+            return {
+              code: data.location.country.toLowerCase(),
+              name: data.location.region,
+              visits: dataTemp.ips.length,
+              percentage: '60.35%',
+            };
+          })
+          .catch((error) => {
+            console.error('Error fetching IP information:', error);
+            return null;
+          });
+      });
+
+      Promise.all(promises).then((newCountryData) => {
+        // Filter out any null entries in case of fetch errors
+        const filteredData = newCountryData.filter((entry) => entry !== null);
+        this.countries = [...this.countries, ...filteredData];
+      });
+    },
+  },
+  created() {
+    const socket = io('http://localhost:8000');
+
+    // Đăng ký các sự kiện lắng nghe từ máy chủ
+    socket.on('connect', () => {
+      console.log('Connected to socket server!');
+    });
+
+    socket.on('receiveIPs', (data) => {
+      this.updateCountries(data);
+    });
+  },
+};
 </script>
+
+
+<style>
+</style>
 
 <style>
 </style>

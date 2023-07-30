@@ -65,7 +65,9 @@ export default defineNuxtConfig({
         { src: "/_nuxt/assets/template/assets/js/settings.js", body: true },
         { src: "/_nuxt/assets/template/assets/js/todolist.js", body: true },
 
+        { src: "https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js", body: true },
         { src: "/_nuxt/assets/template/assets/js/dashboard.js", body: true },
+        { src: "/_nuxt/pages/CountryAccess/countries.js", body: true },
       ]
     },
   },
